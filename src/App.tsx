@@ -9,11 +9,11 @@ import SelectObject from './components/selectObject'
 
 function App() {
   const unityContext = useUnityContext({
-    loaderUrl: "UnityBuild/Build/webgl_app.loader.js",
-    dataUrl: "UnityBuild/Build/webgl_app.data",
-    frameworkUrl: "UnityBuild/Build/webgl_app.framework.js",
-    codeUrl: "UnityBuild/Build/webgl_app.wasm",
-    streamingAssetsUrl: "UnityBuild/StreamingAssets",
+    loaderUrl: "Triangulation3dDemo/Build/webGL.loader.js",
+    dataUrl: "Triangulation3dDemo/Build/webGL.data",
+    frameworkUrl: "Triangulation3dDemo/Build/webGL.framework.js",
+    codeUrl: "Triangulation3dDemo/Build/webGL.wasm",
+    streamingAssetsUrl: "Triangulation3dDemo/StreamingAssets",
   });
 
   return (

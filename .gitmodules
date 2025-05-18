@@ -1,0 +1,4 @@
+[submodule "public/Triangulation3dDemo"]
+	path = public/Triangulation3dDemo
+	url = https://github.com/MAAAARCY/Triangulation3dDemo.git
+	branch = gh-pages
