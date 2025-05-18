@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import './App.css'
 
 import { Unity, useUnityContext } from "react-unity-webgl";
@@ -27,6 +28,23 @@ function App() {
     streamingAssetsUrl: "Triangulation3dDemo/StreamingAssets",
   });
 
+  const { addEventListener, removeEventListener, isLoaded } = unityContext;
+
+  useEffect(() => {
+    if (!isLoaded) return;  // Unityが読み込まれていない場合は早期リターン
+
+    const callback = (...parameters: any[]) => {
+      const message = parameters[0];
+      console.log("Callback", message);
+    };
+
+    addEventListener("Callback", callback);
+    
+    return () => {
+      removeEventListener("Callback", callback);
+    };
+  }, [isLoaded, addEventListener, removeEventListener]);
+
   return (
     <>
       <div className="container">
@@ -36,7 +54,7 @@ function App() {
         />
         <div className="sidebar">
           <CameraControls />
-          <CameraSensitivity />
+          <CameraSensitivity unityContext={unityContext} />
           <JsonFileUpload />
           <SelectObject />
         </div>
