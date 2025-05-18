@@ -1,0 +1,26 @@
+.select-object__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* padding: 15px; */
+}
+
+.select-object__button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 15px;
+  background: none;
+  border: 1px solid #334D66;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.select-object__button svg {
+  margin-right: 10px;
+}
+
+.select-object__button:hover {
+  background: rgba(26, 128, 229, 0.1);
+}

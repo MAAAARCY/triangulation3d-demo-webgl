@@ -22,7 +22,7 @@ export default function CameraSensitivity({ unityContext }: CameraSensitivityPro
 
   // マウント時の初期背景色を設定
   useEffect(() => {
-    const slider = document.querySelector('.camera-sensitivity-slider') as HTMLInputElement;
+    const slider = document.querySelector('.camera-sensitivity__slider') as HTMLInputElement;
     if (slider) {
       const percent = (sensitivity / 20) * 100;
       slider.style.background = `linear-gradient(to right, #1A80E5 0%, #1A80E5 ${percent}%, #334D66 ${percent}%, #334D66 100%)`;
@@ -34,11 +34,11 @@ export default function CameraSensitivity({ unityContext }: CameraSensitivityPro
       <h2 className="sidebar-content-title">
         Camera Sensitivity
       </h2>
-      <h3>
+      <h3 className="camera-sensitivity__subtitle">
         Rotate Speed
       </h3>
-      <div className="camera-sensitivity-slider-container">
-        <div className="camera-sensitivity-slider-wrapper">
+      <div className="camera-sensitivity__container">
+        <div className="camera-sensitivity__wrapper">
           <input
             type="range"
             min="0"
@@ -46,9 +46,9 @@ export default function CameraSensitivity({ unityContext }: CameraSensitivityPro
             step="0.1"
             value={sensitivity}
             onChange={handleChange}
-            className="camera-sensitivity-slider"
+            className="camera-sensitivity__slider"
           />
-          <span className="camera-sensitivity-value">{sensitivity.toFixed(1)}</span>
+          <span className="camera-sensitivity__value">{sensitivity.toFixed(1)}</span>
         </div>
       </div>
     </section>
