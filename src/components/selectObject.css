@@ -24,3 +24,25 @@
 .select-object__button:hover {
   background: rgba(26, 128, 229, 0.1);
 }
+
+.select-object__button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.select-object__button--link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  padding: 8px;
+  background: none;
+  border: 1px solid #334D66;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.select-object__button--link:hover {
+  background: rgba(26, 128, 229, 0.1);
+}

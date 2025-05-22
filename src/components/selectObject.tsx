@@ -10,6 +10,18 @@ function CubeIcon() {
   );
 }
 
+function UrlIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 9.5L9.5 6.5" stroke="currentColor" strokeLinecap="round"/>
+      <path d="M8 4L6.5 5.5" stroke="currentColor" strokeLinecap="round"/>
+      <path d="M10 6L11.5 4.5" stroke="currentColor" strokeLinecap="round"/>
+      <path d="M8 12L9.5 10.5" stroke="currentColor" strokeLinecap="round"/>
+      <path d="M6 10L4.5 11.5" stroke="currentColor" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 export default function SelectObject() {
   return (
     <section>
@@ -17,14 +29,24 @@ export default function SelectObject() {
         Select Object
       </h2>
       <div className="select-object__buttons">
-        <button className="select-object__button">
-          <CubeIcon />
-          <span>Cube</span>
-        </button>
-        <button className="select-object__button">
-          <CubeIcon />
-          <span>Suzanne</span>
-        </button>
+        <div className="select-object__button-group">
+          <button className="select-object__button">
+            <CubeIcon />
+            <span>Cube</span>
+          </button>
+          <button className="select-object__button--link" onClick={() => window.open('https://github.com/MAAAARCY/Triangulation3dDemo/blob/main/Demo/Assets/Triangulation3d/Samples/Addressables/JsonFiles/CubeVertices.json', '_blank')}>
+            <UrlIcon />
+          </button>
+        </div>
+        <div className="select-object__button-group">
+          <button className="select-object__button">
+            <CubeIcon />
+            <span>Suzanne</span>
+          </button>
+          <button className="select-object__button--link" onClick={() => window.open('https://github.com/MAAAARCY/Triangulation3dDemo/blob/main/Demo/Assets/Triangulation3d/Samples/Addressables/JsonFiles/SuzanneVertices.json', '_blank')}>
+            <UrlIcon />
+          </button>
+        </div>
       </div>
     </section>
   );
