@@ -56,7 +56,7 @@ function App() {
           <CameraControls />
           <CameraSensitivity unityContext={unityContext} />
           <JsonFileUpload />
-          <SelectObject />
+          <SelectObject unityContext={unityContext} />
         </div>
       </div>
     </>

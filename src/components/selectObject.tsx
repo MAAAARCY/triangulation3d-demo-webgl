@@ -1,4 +1,9 @@
+import type { UnityContextHook } from "react-unity-webgl/distribution/types/unity-context-hook";
 import './selectObject.css';
+
+interface SelectObjectProps {
+  unityContext: UnityContextHook;
+}
 
 function CubeIcon() {
   return (
@@ -22,7 +27,11 @@ function UrlIcon() {
   );
 }
 
-export default function SelectObject() {
+export default function SelectObject({ unityContext }: SelectObjectProps) {
+  const handleObjectSelect = (objectName: string) => {
+    unityContext.sendMessage("SelectObjectView", "ChangeSelectableObject", objectName);
+  };
+
   return (
     <section>
       <h2 className="sidebar-content-title">
@@ -30,7 +39,10 @@ export default function SelectObject() {
       </h2>
       <div className="select-object__buttons">
         <div className="select-object__button-group">
-          <button className="select-object__button">
+          <button 
+            className="select-object__button"
+            onClick={() => handleObjectSelect("Cube")}
+          >
             <CubeIcon />
             <span>Cube</span>
           </button>
@@ -39,7 +51,10 @@ export default function SelectObject() {
           </button>
         </div>
         <div className="select-object__button-group">
-          <button className="select-object__button">
+          <button 
+            className="select-object__button"
+            onClick={() => handleObjectSelect("Suzanne")}
+          >
             <CubeIcon />
             <span>Suzanne</span>
           </button>

@@ -12,7 +12,7 @@ export default function CameraSensitivity({ unityContext }: CameraSensitivityPro
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(event.target.value);
     setSensitivity(value);
-    unityContext.sendMessage("ReactCommandLogger", "ChangeCameraSensitivity", value);
+    unityContext.sendMessage("CameraSensitivityView", "ChangeCameraSensitivity", value);
     
     // スライダーの背景色を更新
     const percent = (value / 20) * 100;
