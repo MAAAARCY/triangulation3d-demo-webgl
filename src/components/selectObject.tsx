@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import type { UnityContextHook } from "react-unity-webgl/distribution/types/unity-context-hook";
 import './selectObject.css';
 
@@ -28,6 +29,23 @@ function UrlIcon() {
 }
 
 export default function SelectObject({ unityContext }: SelectObjectProps) {
+  const [objects, setObjects] = useState<string[]>([]);
+
+  useEffect(() => {
+    const { addEventListener, removeEventListener } = unityContext;
+
+    const handleCallback = (...parameters: any[]) => {
+      const objectName = parameters[0];
+      // console.log("Received object name:", objectName);
+      if (typeof objectName === "string" && objectName.trim() !== "") {
+        setObjects(prev => [...prev, objectName]);
+      }
+    };
+
+    addEventListener("Callback", handleCallback);
+    return () => removeEventListener("Callback", handleCallback);
+  }, [unityContext]);
+
   const handleObjectSelect = (objectName: string) => {
     unityContext.sendMessage("SelectObjectView", "ChangeSelectableObject", objectName);
   };
@@ -38,30 +56,23 @@ export default function SelectObject({ unityContext }: SelectObjectProps) {
         Select Object
       </h2>
       <div className="select-object__buttons">
-        <div className="select-object__button-group">
-          <button 
-            className="select-object__button"
-            onClick={() => handleObjectSelect("Cube")}
-          >
-            <CubeIcon />
-            <span>Cube</span>
-          </button>
-          <button className="select-object__button--link" onClick={() => window.open('https://github.com/MAAAARCY/Triangulation3dDemo/blob/main/Demo/Assets/Triangulation3d/Samples/Addressables/JsonFiles/CubeVertices.json', '_blank')}>
-            <UrlIcon />
-          </button>
-        </div>
-        <div className="select-object__button-group">
-          <button 
-            className="select-object__button"
-            onClick={() => handleObjectSelect("Suzanne")}
-          >
-            <CubeIcon />
-            <span>Suzanne</span>
-          </button>
-          <button className="select-object__button--link" onClick={() => window.open('https://github.com/MAAAARCY/Triangulation3dDemo/blob/main/Demo/Assets/Triangulation3d/Samples/Addressables/JsonFiles/SuzanneVertices.json', '_blank')}>
-            <UrlIcon />
-          </button>
-        </div>
+        {objects.map((objectName) => (
+          <div key={objectName} className="select-object__button-group">
+            <button
+              className="select-object__button"
+              onClick={() => handleObjectSelect(objectName)}
+            >
+              <CubeIcon />
+              <span>{objectName}</span>
+            </button>
+            <button 
+              className="select-object__button--link" 
+              onClick={() => window.open(`https://github.com/MAAAARCY/Triangulation3dDemo/blob/main/Demo/Assets/Triangulation3d/Samples/Addressables/JsonFiles/${objectName}Vertices.json`, '_blank')}
+            >
+              <UrlIcon />
+            </button>
+          </div>
+        ))}
       </div>
     </section>
   );
