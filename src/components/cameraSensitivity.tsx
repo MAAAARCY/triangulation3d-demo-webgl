@@ -49,7 +49,7 @@ export default function CameraSensitivity({ unityContext }: CameraSensitivityPro
     <section className="camera-sensitivity">
       <h2 className="sidebar-content-title">Camera Sensitivity</h2>
       
-      <h3 className="camera-sensitivity__subtitle">Rotate Left/Right Speed</h3>
+      <h3 className="camera-sensitivity__subtitle">Move Left/Right Speed</h3>
       <div className="camera-sensitivity__container">
         <div className="camera-sensitivity__wrapper">
           <input
