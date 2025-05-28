@@ -56,23 +56,28 @@ export default function SelectObject({ unityContext }: SelectObjectProps) {
         Select Object
       </h2>
       <div className="select-object__buttons">
-        {objects.map((objectName) => (
-          <div key={objectName} className="select-object__button-group">
-            <button
-              className="select-object__button"
-              onClick={() => handleObjectSelect(objectName)}
-            >
-              <CubeIcon />
-              <span>{objectName}</span>
-            </button>
-            <button 
-              className="select-object__button--link" 
-              onClick={() => window.open(`https://github.com/MAAAARCY/Triangulation3dDemo/blob/main/Demo/Assets/Triangulation3d/Samples/Addressables/JsonFiles/${objectName}Vertices.json`, '_blank')}
-            >
-              <UrlIcon />
-            </button>
-          </div>
-        ))}
+        {objects.map((objectName) => {
+          const isUrlEnabled = objectName === "Cube" || objectName === "Suzanne";
+          return (
+            <div key={objectName} className="select-object__button-group">
+              <button
+                className="select-object__button"
+                onClick={() => handleObjectSelect(objectName)}
+              >
+                <CubeIcon />
+                <span>{objectName}</span>
+              </button>
+              <button 
+                className="select-object__button--link"
+                onClick={isUrlEnabled ? () => window.open(`https://github.com/MAAAARCY/Triangulation3dDemo/blob/main/Demo/Assets/Triangulation3d/Samples/Addressables/JsonFiles/${objectName}Vertices.json`, '_blank') : undefined}
+                disabled={!isUrlEnabled}
+                aria-hidden={!isUrlEnabled}
+              >
+                <UrlIcon />
+              </button>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
