@@ -30,7 +30,7 @@ jobs:
       - name: Git submodule update
         run: |
           echo "Updating git submodules..."
-          git submodule add -b gh-pages https://github.com/MAAAARCY/Triangulation3dDemo.git
+          git submodule add -b build-for-react https://github.com/MAAAARCY/Triangulation3dDemo.git
           git submodule update --init --recursive
 
       - name: Set up Node.js
