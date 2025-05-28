@@ -26,6 +26,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - name: Git submodule update
+        run: |
+          echo "Updating git submodules..."
+          git submodule add -b gh-pages https://github.com/MAAAARCY/Triangulation3dDemo.git
+          git submodule update --init --recursive
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
