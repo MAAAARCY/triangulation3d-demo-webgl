@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import './App.css'
 
 import { Unity, useUnityContext } from "react-unity-webgl";
@@ -36,9 +37,9 @@ function App() {
         />
         <div className="sidebar">
           <CameraControls />
-          <CameraSensitivity />
-          <JsonFileUpload />
-          <SelectObject />
+          <CameraSensitivity unityContext={unityContext} />
+          <JsonFileUpload unityContext={unityContext} />
+          <SelectObject unityContext={unityContext} />
         </div>
       </div>
     </>

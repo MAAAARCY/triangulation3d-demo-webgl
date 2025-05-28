@@ -1,0 +1,50 @@
+.json-file-upload__dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 2px dashed #334D66;
+  border-radius: 12px;
+  background-color: rgba(26, 128, 229, 0.1);
+}
+
+.json-file-upload__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 480px;
+}
+
+.json-file-upload__title {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.json-file-upload__subtitle {
+  color: #93ADC8;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+.json-file-upload__button {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #243647;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.json-file-upload__description {
+  color: #93ADC8;
+  font-size: 14px;
+  margin: 8px 15px;
+}

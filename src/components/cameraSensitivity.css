@@ -1,0 +1,73 @@
+/* サブタイトル部分 */
+.camera-sensitivity__subtitle {
+  color: white;
+  font-size: 14px;
+}
+
+/* スライダーのメインコンテナ - 全体の配置を制御 */
+.camera-sensitivity__container {
+  display: flex;
+  align-items: flex-start;  
+  width: 100%;              
+}
+
+/* スライダーと数値のフレックスコンテナ - 要素の配置を制御 */
+.camera-sensitivity__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* input[type="range"]のカスタマイズ - ブラウザデフォルトスタイルを上書き */
+.camera-sensitivity__slider {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 8px;
+  outline: none;
+  transition: background 0.1s;
+}
+
+/* Chromeなどのスライダーのつまみ部分 */
+.camera-sensitivity__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #1A80E5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Firefoxのスライダーのつまみ部分 */
+.camera-sensitivity__slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #1A80E5;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Firefoxのスライダーのプログレスバー（塗りつぶし部分） */
+.camera-sensitivity__slider::-moz-range-progress {
+  background-color: #1A80E5;
+  height: 4px;
+  border-radius: 8px;
+}
+
+/* Firefoxのスライダーのトラック（背景部分） */
+.camera-sensitivity__slider::-moz-range-track {
+  background-color: #334D66;
+  height: 4px;
+  border-radius: 8px;
+}
+
+/* 数値表示部分 */
+.camera-sensitivity__value {
+  color: white;
+  min-width: 32px;
+  text-align: right;
+}
