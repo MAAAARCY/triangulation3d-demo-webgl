@@ -2,8 +2,7 @@ name : Deploy Triangulation3D Demo WebGL
 
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
     
   # Actionタブから手動でワークフローを実行できるようにするための設定
   workflow_dispatch:
@@ -20,6 +19,9 @@ concurrency:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -46,5 +48,6 @@ jobs:
           path: ./dist
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
         
