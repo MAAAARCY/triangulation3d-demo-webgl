@@ -1,6 +1,6 @@
 # Triangulation3DDemo WebGL
 ## これは何？
-- [Triangulation3DDemo](https://github.com/MAAAARCY/Triangulation3dDemo)の完全版です
+- [Triangulation3D](https://github.com/Synesthesias/Triangulation)のデモアプリです
 - React側でUIの制御を、Unity側で3Dモデルの描画を担当しています
 - ReactとUnity間で相互にデータのやり取りが可能な[react-unity-webgl](https://react-unity-webgl.dev/)を使用しています
 
