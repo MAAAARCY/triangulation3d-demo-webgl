@@ -29,4 +29,4 @@ export_vertex_data_to_json(obj_name="Cup")
 ## 3Dモデルサンプル(JSONファイル)
 - リンク先のJSONファイルを投げることで，3Dモデルの生成を体験できます
 - [コップ](https://gist.githubusercontent.com/MAAAARCY/e3d13ad842c3028b54f6faac73ebacb4/raw/407b7bb3b8597d8b89457291418a41e603d9ddd7/Cup.json)
-- [Blenderのロゴ](https://gist.githubusercontent.com/MAAAARCY/49eb5535edfb98fa0a76c8749372e14a/raw/a8c83c717c05f7eea35198ae3171ef6e44847cff/BlenderLogo.json)
+- [Blenderのロゴ](https://gist.githubusercontent.com/MAAAARCY/49eb5535edfb98fa0a76c8749372e14a/raw/9310982490873d2397cb195b4de8ab8ef44973c7/BlenderLogo.json)
