@@ -12,6 +12,12 @@
 ## 使い方
 1. 描画したい3DモデルをBlenderで作成します
 2. Blender上で[頂点情報をjsonファイルに保存するスクリプト](https://gist.githubusercontent.com/MAAAARCY/171e93fe0b19faf30eb7c4338d4c6fe7/raw/b7fc6bc0a859cb0a420ea6ae5415143c14fda89c/obj_to_json.py)を実行します
+
+- 149行目のobj_nameはBlender内のオブジェクト名に適宜変更をお願いします
+```python
+export_vertex_data_to_json(obj_name="Cup")
+```
+
 3. Browse Filesからjsonファイルをアップロードします
    
 4. Select Objectにボタンが追加されます
