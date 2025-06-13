@@ -26,5 +26,6 @@ export_vertex_data_to_json(obj_name="Cup")
 
 5. 追加されたボタンを押すと、Blenderで作成した3Dオブジェクトが描画されます
 
-## サンプルファイル
+## 3Dモデルサンプル(JSONファイル)
+- リンク先のJSONファイルを投げることで，3Dモデルの生成を体験できます
 - [コップ](https://gist.githubusercontent.com/MAAAARCY/e3d13ad842c3028b54f6faac73ebacb4/raw/407b7bb3b8597d8b89457291418a41e603d9ddd7/Cup.json)
