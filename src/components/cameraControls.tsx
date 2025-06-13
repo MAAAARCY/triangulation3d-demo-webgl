@@ -5,8 +5,8 @@ export default function CameraControls() {
         Camera Controls
       </h2>
       <h3 className="sidebar-content-title">
-        Press A : Rotate Left<br />
-        Press D : Rotate Right<br />
+        Press A : Move Left<br />
+        Press D : Move Right<br />
         Press W : Move Up<br />
         Press S : Move Down<br />
         Scroll Wheel : Zoom In/Out<br />
