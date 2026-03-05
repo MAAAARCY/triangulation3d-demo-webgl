@@ -1,32 +1,32 @@
 # Triangulation3DDemo WebGL
 ## これは何？
-- [Triangulation3D](https://github.com/Synesthesias/Triangulation)のデモアプリです
-- React側でUIの制御を、Unity側で3Dモデルの描画を担当しています
-- ReactとUnity間で相互にデータのやり取りが可能な[react-unity-webgl](https://react-unity-webgl.dev/)を使用しています
+- [Triangulation3D](https://github.com/Synesthesias/Triangulation)のデモアプリ
+- React側でUIの制御を、Unity側で3Dモデルの描画を担当
+- ReactとUnity間で相互にデータのやり取りが可能な[react-unity-webgl](https://react-unity-webgl.dev/)を使用
 
 ## できること
-- 頂点情報が入ったJSONファイルから3Dモデルを生成することができます
+- 頂点情報が入ったJSONファイルから3Dモデルを生成することが可能
 <img src="https://github.com/user-attachments/assets/b62d1941-d011-4b24-8caf-d1037e45c8c2" width=700>
 
 
 ## 使い方
-1. 描画したい3DモデルをBlenderで作成します
-2. Blender上で[頂点情報をJSONファイルに保存するスクリプト](https://gist.githubusercontent.com/MAAAARCY/171e93fe0b19faf30eb7c4338d4c6fe7/raw/b7fc6bc0a859cb0a420ea6ae5415143c14fda89c/obj_to_json.py)を実行します
+1. 描画したい3DモデルをBlenderで作成
+2. Blender上で[頂点情報をJSONファイルに保存するスクリプト](https://gist.githubusercontent.com/MAAAARCY/171e93fe0b19faf30eb7c4338d4c6fe7/raw/b7fc6bc0a859cb0a420ea6ae5415143c14fda89c/obj_to_json.py)を実行
 
-- 149行目のobj_nameはBlender内のオブジェクト名に適宜変更をお願いします
+- 149行目のobj_nameはBlender内のオブジェクト名に適宜変更する
 ```python
 export_vertex_data_to_json(obj_name="Cup")
 ```
 
-3. Browse FilesからJSONファイルをアップロードします
+3. Browse FilesからJSONファイルをアップロード
    
-4. Select Objectにボタンが追加されます
+4. Select Objectにボタンが追加される
    
 <img src="https://github.com/user-attachments/assets/3eceae13-4688-46e2-9dde-c0e79d52dcea" width=500>
 
-5. 追加されたボタンを押すと、Blenderで作成した3Dオブジェクトが描画されます
+5. 追加されたボタンを押すと、Blenderで作成した3Dオブジェクトが描画される
 
 ## 3Dモデルサンプル(JSONファイル)
-- リンク先のJSONファイルを投げることで，3Dモデルの生成を体験できます
+- リンク先のJSONファイルを投げることで，3Dモデルの生成を体験可能
 - [コップ](https://gist.githubusercontent.com/MAAAARCY/e3d13ad842c3028b54f6faac73ebacb4/raw/407b7bb3b8597d8b89457291418a41e603d9ddd7/Cup.json)
 - [Blenderのロゴ](https://gist.githubusercontent.com/MAAAARCY/49eb5535edfb98fa0a76c8749372e14a/raw/9310982490873d2397cb195b4de8ab8ef44973c7/BlenderLogo.json)
